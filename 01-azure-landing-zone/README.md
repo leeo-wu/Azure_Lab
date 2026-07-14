@@ -18,7 +18,7 @@ O objetivo deste laboratório foi implementar uma estrutura básica de \*\*Azure
 
 
 
-!\[Diagrama da Arquitetura](./lading\_zone.png)
+!\[Diagrama da Arquitetura](./lading_zone.png)
 
 
 
