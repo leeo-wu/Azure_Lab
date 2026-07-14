@@ -1,4 +1,4 @@
-# Lab: [Projeto Hands-on Azure Landing Zone]
+# Lab: Projeto Hands-on Azure Landing Zone
 
 ## 📝 1. Objetivo do Laboratório
 O objetivo deste laboratório foi implementar uma estrutura básica de **Azure Landing Zone** seguindo as melhores práticas de arquitetura recomendadas pela Microsoft (CAF - Cloud Adoption Framework). O foco foi garantir a segregação de responsabilidades através de múltiplos Resource Groups, provisionamento de rede segura (Hub), armazenamento centralizado de logs, gerenciamento seguro de credenciais e aplicação de políticas de conformidade (governança).
