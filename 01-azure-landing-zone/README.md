@@ -3,7 +3,7 @@
 ## 📝 1. Objetivo do Laboratório
 O objetivo deste laboratório foi implementar uma estrutura básica de **Azure Landing Zone** seguindo as melhores práticas de arquitetura recomendadas pela Microsoft (CAF - Cloud Adoption Framework). O foco foi garantir a segregação de responsabilidades através de múltiplos Resource Groups, provisionamento de rede segura (Hub), armazenamento centralizado de logs, gerenciamento seguro de credenciais e aplicação de políticas de conformidade (governança).
 
----
+
 
 ## 📐 2. Arquitetura do Cenário
 *O diagrama abaixo ilustra a topologia de rede e a distribuição dos recursos dentro de suas respectivas áreas de governança.*
@@ -30,7 +30,7 @@ O objetivo deste laboratório foi implementar uma estrutura básica de **Azure L
   * **Storage Account:** `sa-labAzure-log` (Repositório para retenção de logs brutos de diagnóstico das VMs).
   * **Azure Policy:** Aplicação de políticas para controle e governança de recursos.
 
----
+
 
 ## 🚀 3. Passo a Passo Resumido
 
@@ -56,7 +56,7 @@ O objetivo deste laboratório foi implementar uma estrutura básica de **Azure L
      * **Require a tag and its value on resource groups:** Obriga que todo novo grupo de recursos seja criado com uma tag específica e seu respectivo valor predefinido.
      * **Require a tag and its value on resources:** Garante que os recursos individuais herdem ou sejam criados obrigatoriamente com a marcação de tags necessária para a governança do ambiente.
 
----
+
 
 ## 💻 4. Scripts e Comandos Úteis
 Script PowerShell executado para a instalação automatizada do IIS e configuração da tela padrão com o hostname da máquina:
