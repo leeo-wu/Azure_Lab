@@ -1,4 +1,4 @@
-# Lab: [Criando Imagens Customizadas com Azure Compute Galleries]
+# Lab: Criando Imagens Customizadas com Azure Compute Galleries
 
 ## 📝 1. Objetivo do Laboratório
 O objetivo deste laboratório foi criar imagens de máquinas virtuais personalizadas (Golden Images) para Windows e Linux, utilizando o **Azure Compute Galleries**. 
