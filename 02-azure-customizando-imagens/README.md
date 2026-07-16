@@ -42,6 +42,7 @@ O processo consistiu em:
 ### 4.1. Ambiente Windows (IIS & Sysprep)
 Abaixo estão os comandos utilizados para preparar o servidor web e, em seguida, generalizar o sistema operacional para a captura da imagem:
 
+```powershell
 # Passo 1 Instalação do papel de Servidor Web (IIS) com as ferramentas de gerenciamento
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
@@ -53,9 +54,11 @@ Set-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value "Azure Expert VM is r
 
 # Passo 4 Execução do utilitário Sysprep para remover informações específicas (SID, drivers) e desligar a VM
 %windir%\System32\Sysprep\Sysprep.exe /generalize /oobe /shutdown
+```
 
 ### 4.2. Ambiente Linux (Nginx & Waagent)
 
+```bash
 # Passo 1 Atualização do gerenciador de pacotes e instalação do Nginx
 sudo apt update && sudo apt install nginx -y
 
@@ -67,3 +70,4 @@ sudo waagent -deprovision+user -force
 
 # Passo 4 Limpeza do histórico de comandos do terminal antes do encerramento
 history -c && exit
+```
