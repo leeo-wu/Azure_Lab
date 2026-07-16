@@ -9,8 +9,6 @@ O processo consistiu em:
 * Preparar os sistemas operacionais para generalização.
 * Capturar essas imagens para armazenamento e replicação centralizada, permitindo o provisionamento rápido de novas instâncias padronizadas.
 
----
-
 ## 📐 2. Arquitetura do Cenário
 
 ### Componentes Utilizados:
@@ -26,7 +24,6 @@ O processo consistiu em:
   * 1x Instância `Standard_D2s_v3` (`VM-Web-Template-Win`) rodando Windows Server 2022.
   * 1x Instância `Standard_D2s_v3` (`VM-Web-Template-Lin`) rodando Ubuntu Server.
 
----
 
 ## 🚀 3. Passo a Passo Resumido
 
@@ -39,14 +36,12 @@ O processo consistiu em:
    * **No Linux:** Execução do utilitário `waagent` para desprovisionar a máquina e limpar o histórico de comandos.
 5. **Captura e Publicação:** Captura das máquinas virtualizadas através do portal do Azure, gerando as versões de imagem diretamente no **Azure Compute Gallery**.
 
----
 
 ## 💻 4. Scripts e Comandos Úteis
 
 ### 4.1. Ambiente Windows (IIS & Sysprep)
 Abaixo estão os comandos utilizados para preparar o servidor web e, em seguida, generalizar o sistema operacional para a captura da imagem:
 
-```powershell
 # [Passo 1] Instalação do papel de Servidor Web (IIS) com as ferramentas de gerenciamento
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
