@@ -12,9 +12,6 @@ O processo consistiu em:
 ---
 
 ## 📐 2. Arquitetura do Cenário
-*O diagrama abaixo ilustra a topologia de rede e a distribuição dos recursos dentro de suas respectivas áreas de governança.*
-
-![Diagrama da Arquitetura](./images/lading_zone.png)
 
 ### Componentes Utilizados:
 * **Resource Groups:**
