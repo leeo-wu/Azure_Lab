@@ -42,28 +42,28 @@ O processo consistiu em:
 ### 4.1. Ambiente Windows (IIS & Sysprep)
 Abaixo estão os comandos utilizados para preparar o servidor web e, em seguida, generalizar o sistema operacional para a captura da imagem:
 
-# [Passo 1] Instalação do papel de Servidor Web (IIS) com as ferramentas de gerenciamento
+# Passo 1 Instalação do papel de Servidor Web (IIS) com as ferramentas de gerenciamento
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
-# [Passo 2] Remoção do arquivo HTML padrão do IIS (se ele existir)
+# Passo 2 Remoção do arquivo HTML padrão do IIS (se ele existir)
 Remove-Item C:\inetpub\wwwroot\iisstart.htm -ErrorAction SilentlyContinue
 
-# [Passo 3] Criação de um novo arquivo limpo (Set-Content evita duplicação de texto)
+# Passo 3 Criação de um novo arquivo limpo (Set-Content evita duplicação de texto)
 Set-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value "Azure Expert VM is running $($env:computername)"
 
-# [Passo 4] Execução do utilitário Sysprep para remover informações específicas (SID, drivers) e desligar a VM
+# Passo 4 Execução do utilitário Sysprep para remover informações específicas (SID, drivers) e desligar a VM
 %windir%\System32\Sysprep\Sysprep.exe /generalize /oobe /shutdown
 
 ### 4.2. Ambiente Linux (Nginx & Waagent)
 
-# [Passo 1] Atualização do gerenciador de pacotes e instalação do Nginx
+# Passo 1 Atualização do gerenciador de pacotes e instalação do Nginx
 sudo apt update && sudo apt install nginx -y
 
-# [Passo 2] Sobrescreve a página padrão com o hostname dinâmico do Linux
+# Passo 2 Sobrescreve a página padrão com o hostname dinâmico do Linux
 echo "Azure Expert VM is running $(hostname)" | sudo tee /var/www/html/index.html
 
-# [Passo 3] Execução do waagent para desprovisionar a máquina (remover chaves SSH e dados temporários de usuário)
+# Passo 3 Execução do waagent para desprovisionar a máquina (remover chaves SSH e dados temporários de usuário)
 sudo waagent -deprovision+user -force
 
-# [Passo 4] Limpeza do histórico de comandos do terminal antes do encerramento
+# Passo 4 Limpeza do histórico de comandos do terminal antes do encerramento
 history -c && exit
